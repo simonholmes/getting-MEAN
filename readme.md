@@ -3,7 +3,7 @@ Getting MEAN application code
 
 This is the code for the sample 'Loc8r' application that is built through the course of my book [Getting MEAN](http://www.manning.com/sholmes/).
 
-This branch holds the code as it stands at the end of Chapter 3.
+This branch holds the code as it stands at the end of Chapter 3 *Creating and setting up a MEAN project*.
 
 Clone this branch with the following commands (in a fresh folder)
 ```sh
