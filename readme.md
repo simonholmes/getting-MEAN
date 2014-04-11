@@ -10,5 +10,9 @@ Clone this branch with the following commands (in a fresh folder)
 $ git init
 $ git clone -b chapter-03 https://github.com/simonholmes/getting-MEAN.git
 ```
+Install the npm module dependencies:
+```sh
+$ cd getting-MEAN
+$ npm install
 
 Getting MEAN is published by Manning, and is currently available through their early access program: [www.manning.com/sholmes/](http://www.manning.com/sholmes/)
