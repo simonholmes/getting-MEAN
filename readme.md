@@ -14,5 +14,5 @@ Install the npm module dependencies:
 ```sh
 $ cd getting-MEAN
 $ npm install
-
+```
 Getting MEAN is published by Manning, and is currently available through their early access program: [www.manning.com/sholmes/](http://www.manning.com/sholmes/)
