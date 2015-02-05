@@ -55,7 +55,7 @@
                 <div class="review" ng-repeat="review in vm.data.location.reviews | orderBy:'createdOn':true">
                   <div class="well well-sm review-header">
                     <span class="rating" rating-stars rating="review.rating"></span>
-                    <span class="reviewAuthor">{{ review.author.displayName }}</span>
+                    <span class="reviewAuthor">{{ review.author }}</span>
                     <small class="reviewTimestamp">{{ review.createdOn | date : 'd MMMM yyyy' }}</small>
                   </div>
                   <div class="col-xs-12">
