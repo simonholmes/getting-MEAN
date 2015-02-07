@@ -6,7 +6,7 @@ block content
       h1 Review Starcups
   .row
     .col-xs-12.col-md-6
-      form.form-horizontal(action="", method="post", role="form")
+      form.form-horizontal(action="#{url}", method="post", role="form")
         - if (error == "val")
           .alert.alert-danger(role="alert") All fields required, please try again
         .form-group
