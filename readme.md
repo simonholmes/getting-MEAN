@@ -5,7 +5,9 @@ This is the code for the sample 'Loc8r' application that is built through the co
 
 Getting MEAN is published by Manning[www.manning.com/sholmes/](http://www.manning.com/sholmes/)
 
-There are named branches for the various states of the code throughout the book, so far:
+The code in this repo is based on Express 4. If you have an older version of the MEAP and you're working with Express 3, the associated code has been moved to [getting-MEAN-express3](https://github.com/simonholmes/getting-MEAN-express3)
+
+There are named branches for the various states of the code throughout the book:
 
 * `master` **Chapter 3 start**: A blank Express 4.9.0 project
 * `chapter-03` **Chapter 3 end**: Creating and setting up a MEAN project
