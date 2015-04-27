@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('./app_api/models/db');
-var UglifyJS = require("uglify-js");
+var uglifyJs = require("uglify-js");
 var fs = require('fs');
 
 var routes = require('./app_server/routes/index');
@@ -33,7 +33,7 @@ var appClientFiles = [
   'app_client/common/directives/pageHeader/pageHeader.directive.js',
   'app_client/common/directives/ratingStars/ratingStars.directive.js'
 ];
-var uglified = UglifyJS.minify(appClientFiles, { compress : false });
+var uglified = uglifyJs.minify(appClientFiles, { compress : false });
 
 fs.writeFile('public/angular/loc8r.min.js', uglified.code, function (err){
   if(err) {
