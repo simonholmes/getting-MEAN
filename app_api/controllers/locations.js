@@ -108,7 +108,7 @@ module.exports.locationsCreate = function(req, res) {
   Loc.create({
     name: req.body.name,
     address: req.body.address,
-    facilities: req.body.facilities.split(","),
+    facilities: (req.body.facilities || '').split(","),
     coords: [parseFloat(req.body.lng), parseFloat(req.body.lat)],
     openingTimes: [{
       days: req.body.days1,
@@ -156,7 +156,7 @@ module.exports.locationsUpdateOne = function(req, res) {
         }
         location.name = req.body.name;
         location.address = req.body.address;
-        location.facilities = req.body.facilities.split(",");
+        location.facilities = (req.body.facilities || '').split(",");
         location.coords = [parseFloat(req.body.lng), parseFloat(req.body.lat)];
         location.openingTimes = [{
           days: req.body.days1,
