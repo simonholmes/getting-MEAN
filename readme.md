@@ -17,3 +17,4 @@ There are named branches for the various states of the code throughout the book,
 * `chapter-08` **Chapter 8**: Adding Angular components to an Express application
 * `chapter-09` **Chapter 9**: Building a Single Page Application with Angular: Foundations
 * `chapter-10` **Chapter 10**: Building a Single Page Application with Angular: The next level
+* `chapter-11` **Chapter 11**: Authenticating users, managing sessions and securing APIs
