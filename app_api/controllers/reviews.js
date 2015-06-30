@@ -9,33 +9,35 @@ var sendJSONresponse = function(res, status, content) {
 /* POST a new review, providing a locationid */
 /* /api/locations/:locationid/reviews */
 module.exports.reviewsCreate = function(req, res) {
-  if (req.params.locationid) {
-    Loc
-      .findById(req.params.locationid)
-      .select('reviews')
-      .exec(
-        function(err, location) {
-          if (err) {
-            sendJSONresponse(res, 400, err);
-          } else {
-            doAddReview(req, res, location);
+  getAuthor(req, res, function (req, res, userName) {
+    if (req.params.locationid) {
+      Loc
+        .findById(req.params.locationid)
+        .select('reviews')
+        .exec(
+          function(err, location) {
+            if (err) {
+              sendJSONresponse(res, 400, err);
+            } else {
+              doAddReview(req, res, location, userName);
+            }
           }
-        }
-    );
-  } else {
-    sendJSONresponse(res, 404, {
-      "message": "Not found, locationid required"
-    });
-  }
+      );
+    } else {
+      sendJSONresponse(res, 404, {
+        "message": "Not found, locationid required"
+      });
+    }
+  });
 };
 
 
-var doAddReview = function(req, res, location) {
+var doAddReview = function(req, res, location, author) {
   if (!location) {
     sendJSONresponse(res, 404, "locationid not found");
   } else {
     location.reviews.push({
-      author: req.body.author,
+      author: author,
       rating: req.body.rating,
       reviewText: req.body.reviewText
     });
