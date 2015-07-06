@@ -7,12 +7,6 @@
     <div class="modal-body">
       <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
       <div class="form-group">
-        <label for="name" class="col-xs-2 col-sm-2 control-label">Name</label>
-        <div class="col-xs-10 col-sm-10">
-          <input id="name" name="name" required="required" ng-model="vm.formData.name" class="form-control"/>
-        </div>
-      </div>
-      <div class="form-group">
         <label for="rating" class="col-xs-10 col-sm-2 control-label">Rating</label>
         <div class="col-xs-12 col-sm-2">
           <select id="rating" name="rating" ng-model="vm.formData.rating" class="form-control input-sm">
