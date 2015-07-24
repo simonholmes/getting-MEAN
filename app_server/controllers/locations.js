@@ -84,9 +84,6 @@ module.exports.addReview = function(req, res) {
         title: 'Review Starcups on Loc8r',
         pageHeader: {
             title: 'Review Starcups'
-        },
-        user: {
-            displayName: "Simon Holmes"
         }
     });
 };
