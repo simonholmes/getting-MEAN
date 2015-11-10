@@ -10,7 +10,7 @@ There are named branches for the various states of the code throughout the book:
 
 * `master` **Chapter 3 start**: A blank Express 4.9.0 project
 * `chapter-03` **Chapter 3 end**: Creating and setting up a MEAN project
-* `chapter-04-view` **Chapter 4 mid-point**: The data is hard coded into views
+* `chapter-04-views` **Chapter 4 mid-point**: The data is hard coded into views
 * `chapter-04` **Chapter 4 end**: Building a static site with Node.js and Express
 * `chapter-05` **Chapter 5**: Building a data model with MongoDB and Mongoose
 * `chapter-06` **Chapter 6**: Writing a REST API: Exposing your MongoDB database to the application
