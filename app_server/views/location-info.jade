@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Starcups
+  .row
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12.col-sm-6
+          p.rating
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            span.glyphicon.glyphicon-star-empty
+          p 125 High Street, Reading, RG6 1PS
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Opening hours
+            .panel-body
+              p Monday - Friday : 7:00am - 7:00pm
+              p Saturday : 8:00am - 5:00pm
+              p Sunday : closed
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Facilities
+            .panel-body
+              span.label.label-warning
+                span.glyphicon.glyphicon-ok
+                | &nbsp;Hot drinks
+              | &nbsp;
+              span.label.label-warning
+                span.glyphicon.glyphicon-ok
+                | &nbsp;Food
+              | &nbsp;
+              span.label.label-warning
+                span.glyphicon.glyphicon-ok
+                | &nbsp;Premium wifi
+              | &nbsp;
+        .col-xs-12.col-sm-6.location-map
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Location map
+            .panel-body
+              img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=51.455041,-0.9690884&zoom=17&size=400x350&sensor=false&markers=51.455041,-0.9690884&scale=2')
+      .row
+        .col-xs-12
+          .panel.panel-primary.review-panel
+            .panel-heading
+              a.btn.btn-default.pull-right(href='/location/review/new') Add review
+              h2.panel-title Customer reviews
+            .panel-body.review-container
+              .row
+                .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                    span.reviewAuthor Simon Holmes
+                    small.reviewTimestamp 16 July 2013
+                  .col-xs-12
+                    p What a great place. I can't say enough good things about it.
+              .row
+                .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star-empty
+                      span.glyphicon.glyphicon-star-empty
+                    span.reviewAuthor Charlie Chaplin
+                    small.reviewTimestamp 16 June 2013
+                  .col-xs-12
+                    p It was okay. Coffee wasn't great, but the wifi was fast.
+    .col-xs-12.col-md-3
+      p.lead
+        | Starcups is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.
+      p
+        | If you've been and you like it - or if you don't - please leave a review to help other people just like you.
