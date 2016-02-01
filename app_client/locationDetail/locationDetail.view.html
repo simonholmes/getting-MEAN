@@ -1,0 +1,79 @@
+<navigation></navigation>
+
+<div class="container">
+  <page-header content="vm.pageHeader"></page-header>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <p class="rating" rating-stars rating="vm.data.location.rating"></p>
+          <p>{{ vm.data.location.address }}</p>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title">Opening hours</h2>
+            </div>
+            <div class="panel-body">
+              <p ng-repeat="time in vm.data.location.openingTimes" ng-switch on="time.closed">
+                {{ time.days }} :
+                <span class="opening-time" ng-switch-when="true">closed</span>
+                <span class="opening-time" ng-switch-default>{{ time.opening + " - " + time.closing }}</span>
+              </p>
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title">Facilities</h2>
+            </div>
+            <div class="panel-body">
+              <span class="label label-warning label-facility" ng-repeat="facility in vm.data.location.facilities">
+                <span class="glyphicon glyphicon-ok"></span> 
+                {{ facility }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 location-map">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2 class="panel-title">Location map</h2>
+            </div>
+            <div class="panel-body">
+              <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ vm.data.location.coords[1] }},{{ vm.data.location.coords[0] }}&amp;zoom=17&amp;size=400x350&amp;sensor=false&amp;markers={{ vm.data.location.coords[1] }},{{ vm.data.location.coords[0] }}&amp;scale=2" class="img-responsive img-rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-primary review-panel">
+            <div class="panel-heading">
+              <a ng-show="vm.isLoggedIn" ng-click="vm.popupReviewForm()" class="btn btn-default pull-right">Add review</a>
+              <a ng-hide="vm.isLoggedIn" href="/#/login?page={{ vm.currentPath }}" class="btn btn-default pull-right">Login to add review</a>
+              <h2 class="panel-title">Customer reviews</h2>
+            </div>
+            <div class="panel-body review-container">
+              <div class="row">
+                <div class="review" ng-repeat="review in vm.data.location.reviews | orderBy:'createdOn':true">
+                  <div class="well well-sm review-header">
+                    <span class="rating" rating-stars rating="review.rating"></span>
+                    <span class="reviewAuthor">{{ review.author }}</span>
+                    <small class="reviewTimestamp">{{ review.createdOn | date : 'd MMMM yyyy' }}</small>
+                  </div>
+                  <div class="col-xs-12">
+                    <p ng-bind-html="review.reviewText | addHtmlLineBreaks"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <p class="lead">{{ vm.data.location.name }} is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.</p>
+      <p>If you've been and you like it - or if you don't - please leave a review to help other people just like you.</p>
+    </div>
+  </div>
+  <footer-generic></footer-generic>
+</div>

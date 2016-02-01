@@ -1,0 +1,33 @@
+<div class="modal-content">
+  <form id="addReview" name="addReview" role="form" ng-submit="vm.onSubmit()" class="form-horizontal">
+    <div class="modal-header">
+      <button type="button" ng-click="vm.modal.cancel()" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h4 id="myModalLabel" class="modal-title">Add your review for {{ vm.locationData.locationName }}</h4>
+    </div>
+    <div class="modal-body">
+      <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+      <div class="form-group">
+        <label for="rating" class="col-xs-10 col-sm-2 control-label">Rating</label>
+        <div class="col-xs-12 col-sm-2">
+          <select id="rating" name="rating" ng-model="vm.formData.rating" class="form-control input-sm">
+            <option>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="review" class="col-sm-2 control-label">Review</label>
+        <div class="col-sm-10">
+          <textarea id="review" name="review" rows="5" required="required" ng-model="vm.formData.reviewText" class="form-control"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Cancel</button>
+      <button type="submit" class="btn btn-primary">Submit review</button>
+    </div>
+  </form>
+</div>
