@@ -1,0 +1,25 @@
+<navigation></navigation>
+
+<div class="container">
+  <page-header content="vm.pageHeader"></page-header>
+
+  <div class="row">
+    <div class="col-md-6 col-sm-8">
+      <p class="lead">Not a member? Please <a href="/#register?page={{ vm.returnPage }}">register</a> first.</p>
+      <form ng-submit="vm.onSubmit()">
+        <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="vm.credentials.email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.credentials.password">
+        </div>
+        <button type="submit" class="btn btn-default">Sign in!</button>
+      </form>
+    </div>
+  </div>
+
+  <footer-generic></footer-generic>
+</div>
