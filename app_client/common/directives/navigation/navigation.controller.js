@@ -16,10 +16,8 @@
 
     vm.logout = function() {
       authentication.logout();
-      // When a user is logging out at home page, it won't refresh logon status right away. 
-      // So, we need to update it manually 
-      // or simply location to any un-routed page so that it will be back to homepage with update logon status. 
-      $location.path('/logout');
+      vm.isLoggedIn = false;
+      $location.path('/');
     };
 
   }
