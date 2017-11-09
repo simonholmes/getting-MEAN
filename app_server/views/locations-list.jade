@@ -1,0 +1,27 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1= pageHeader.title
+         small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-xs-12.col-sm-8
+      .row.list-group
+        each location in locations
+          .col-xs-12.list-group-item
+            h4 
+              a(href="/location")= location.name
+              small &nbsp;
+                +outputRating(location.rating)
+              span.badge.pull-right.badge-default= location.distance
+            p.address= location.address
+            p
+              each facility in location.facilities
+                span.label.label-warning= facility
+                &nbsp;
+    .col-xs-12.col-sm-4 
+      p.lead= sidebar
