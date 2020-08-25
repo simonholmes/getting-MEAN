@@ -75,16 +75,18 @@ var doSetAverageRating = function(location) {
     }
     ratingAverage = parseInt(ratingTotal / reviewCount, 10);
     location.rating = ratingAverage;
-    location.save(function(err) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("Average rating updated to", ratingAverage);
-      }
-    });
-  }else{
+  }
+  else{
     location.rating = 0;
   }
+  location.save(function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Average rating updated to", ratingAverage);
+    }
+  });
+  
 };
 
 module.exports.reviewsUpdateOne = function(req, res) {
