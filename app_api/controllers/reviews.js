@@ -82,6 +82,8 @@ var doSetAverageRating = function(location) {
         console.log("Average rating updated to", ratingAverage);
       }
     });
+  }else{
+    location.rating = 0;
   }
 };
 
