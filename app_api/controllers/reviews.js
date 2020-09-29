@@ -75,6 +75,9 @@ var doSetAverageRating = function(location) {
     }
     ratingAverage = parseInt(ratingTotal / reviewCount, 10);
     location.rating = ratingAverage;
+  }else{
+    location.rating = 0
+  }
     location.save(function(err) {
       if (err) {
         console.log(err);
