@@ -33,3 +33,5 @@ Then change into the folder the git clone command will create:
 And finally install the dependencies:
 
 `npm install`
+
+Start app by runing command npm start in route directory
